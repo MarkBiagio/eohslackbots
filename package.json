@@ -1,0 +1,24 @@
+{
+  "name": "eohslackbots",
+  "version": "1.0.0",
+  "description": "a slack bot",
+  "main": "YodaSlackBot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MarkBiagio/eohslackbots.git"
+  },
+  "author": "mbiagio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarkBiagio/eohslackbots/issues"
+  },
+  "homepage": "https://github.com/MarkBiagio/eohslackbots",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "unirest": "^0.4.2"
+  }
+}
