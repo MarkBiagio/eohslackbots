@@ -1,7 +1,9 @@
+var port = process.env.PORT || 1337;
+var baseHost = process.env.WEBSITE_HOSTNAME || 'localhost';
+
 var http = require('http');
 
-
-http.createServer(function (req, res) {
+var server = http.createServer(function (req, res) {
     req.setEnvoding('utf8')
     var slackObject = null;
     var responseText = "";
@@ -38,6 +40,16 @@ http.createServer(function (req, res) {
         res.end();
     });
 
-}).listen(24568);
+});
 
-console.log('server running...');
+if (baseHost == 'localhost') {
+    server.listen(port, 'localhost', function () {
+        console.log('local server running...');
+    });
+} else {
+    server.listen(port, baseHost, function () {
+        console.log('azure server running...');
+    });
+}
+
+
