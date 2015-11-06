@@ -22,8 +22,9 @@ app.post('/yoda', function (req, res, next) {
 
     if (trigger_word == "yoda:") {
         var t = text.replace(trigger_word, "");
-
-        var x = unirest.get("https://yoda.p.mashape.com/yoda?sentence=we+must+look+to+the+future")
+        var t2 = t.replace(/ /g, "+");
+        console.log(t2);
+        var x = unirest.get("https://yoda.p.mashape.com/yoda?sentence=" + t2)
                                 .header("X-Mashape-Key", "olQfyZcLGqmshkyCJBPRg4XdAOWXp1vBR9bjsnrUJVOfinuwjR")
                                 .header("Accept", "text/plain");
 
